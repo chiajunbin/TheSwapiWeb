@@ -3,10 +3,13 @@ import { Row, Col } from "reactstrap";
 
 const Header = () => {
   const logoStyle = {
-    width: "50px",
     height: "auto",
     marginRight: "10px",
-    marginLeft: "30px",
+    marginLeft: "25px",
+    paddingTop: "20px",
+    paddingBottom: "15px",
+    fontWeight: "bold",
+    color: "white",
   };
 
   const headerStyle = {
@@ -15,13 +18,12 @@ const Header = () => {
 
   return (
     <header style={headerStyle}>
-      <Row className="align-items-center">
+      <Row
+        className="align-items-center"
+        style={{ background: "black", marginLeft: 0 }}
+      >
         <Col xs="auto">
-          <img
-            src={process.env.PUBLIC_URL + "/star-wars-logo.png"}
-            alt="Logo"
-            style={logoStyle}
-          />
+          <h5 style={logoStyle}>The Star Wars Website</h5>
         </Col>
       </Row>
     </header>

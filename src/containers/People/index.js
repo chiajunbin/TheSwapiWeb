@@ -8,7 +8,8 @@ import {
 } from "reactstrap";
 import withDataFetch from "./action";
 import { Spinner } from "reactstrap";
-import Header from "../../components/Header";
+import { Spin } from "antd";
+//import Header from "../../components/Header";
 
 const DataTable = ({ data, getPeopleList, loading, totalPage }) => {
   const [page, setPage] = useState(1);
@@ -18,12 +19,18 @@ const DataTable = ({ data, getPeopleList, loading, totalPage }) => {
   }, [page]);
 
   return (
-    <>
+    <Container>
+      <h3
+        style={{
+          paddingLeft: 5,
+          paddingTop: 5,
+          paddingBottom: 5,
+          fontWeight: "bold",
+        }}
+      >
+        People
+      </h3>
       <div>
-        <Header />
-      </div>
-
-      <Container style={{ paddingTop: "30px" }}>
         <Table hover>
           <thead>
             <tr>
@@ -80,7 +87,7 @@ const DataTable = ({ data, getPeopleList, loading, totalPage }) => {
             <PaginationLink href="#" last onClick={() => setPage(totalPage)} />
           </PaginationItem>
         </Pagination>
-      </Container>
+      </div>
 
       {loading && (
         <div
@@ -95,10 +102,11 @@ const DataTable = ({ data, getPeopleList, loading, totalPage }) => {
             left: 0,
           }}
         >
-          <Spinner color="primary" />
+          {/* <Spinner color="primary" /> */}
+          <Spin size="large" />
         </div>
       )}
-    </>
+    </Container>
   );
 };
 
