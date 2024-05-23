@@ -18,7 +18,6 @@ const WithDataFetch = (WrappedComponent) => {
               data: res.data.results,
               totalPage: Math.ceil(res.data.count / 10),
             });
-            console.log(res.data);
             this.setState({ loading: false });
           })
           .catch((error) => {
